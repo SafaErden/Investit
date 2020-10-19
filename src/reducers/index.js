@@ -1,8 +1,8 @@
   
 import { combineReducers } from 'redux';
-//import books from './books';
-//import filter from './filter';
+import stocks from './stocks';
+import filter from './filter';
 
-const mainReducer = combineReducers({ });
+const mainReducer = combineReducers({ filter, stocks });
 
 export default mainReducer;

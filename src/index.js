@@ -8,6 +8,7 @@ import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 const store = createStore(mainReducer, {}, applyMiddleware(thunk));
 
 ReactDOM.render(
