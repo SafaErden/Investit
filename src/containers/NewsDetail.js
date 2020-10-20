@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 
 const NewsDetail = ({stock}) => {
     const { id, author, title, source, urlToImage } = stock[0];
+    
     return (
         <div className="border col-12 col-md-6 col-xl-4">
               <div>Author: {author}</div>

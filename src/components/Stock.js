@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 const Stock = ({stock}) => {
   const { id, author, title, source, urlToImage } = stock;
   return(
-      <div className="border col-12 col-md-6 col-xl-4">
-          <div>Author: {author}</div>
-          <div>Description: {`${title.slice(0, 23)}...`}</div>
-          <div>source: {source['name']}</div>
-          <Link to={`/detail/${id}`} detail={stock}>Protected Page</Link>
-          <div>image: <img className="w-100" src={urlToImage} alt={title}/></div>
+      <div className="col-12 col-md-6 col-xl-4 my-2">
+          <div className="card" style={{}}>
+            <img className="card-img-top" src={urlToImage} alt={title}/>
+            <div className="card-body">
+              <h5 className="card-title">{source['name']}</h5>
+              <p className="card-text">{`${title.slice(0, 30)}...`}</p>
+              <Link to={`/detail/${id}`}  className="btn btn-primary">Details</Link>
+            </div>
+          </div>
       </div>
   )
 };

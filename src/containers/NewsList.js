@@ -1,16 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setStocks } from '../actions/';
-import Stock from '../components/Stock'
+import Stock from '../components/Stock';
+import Header from '../containers/Header';
 
 
 class NewsList extends React.Component {
-
-     componentDidMount () {
-        const { setStocks} = this.props;
-        setStocks();
-    }
 
     render() {
         const { stocks, filter } = this.props;
@@ -30,9 +25,13 @@ class NewsList extends React.Component {
         }
         
         return (
+            <div>
+            <Header />
                 <div className="row">
-                {stockList}
+                    {stockList}
                 </div>
+
+            </div>
         );
     }
 }
@@ -46,6 +45,4 @@ const mapStateToProps = state => ({
     filter: state.filter
 });
 
-const mapDispatchToProps = {setStocks}
-
-export default connect(mapStateToProps,mapDispatchToProps)(NewsList);
+export default connect(mapStateToProps)(NewsList);
