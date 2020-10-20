@@ -2,21 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-
-const Filter = ({handleFilterChange,filters}) => (
-    <select onChange={handleFilterChange} className="text-white bg-dark">
-        {filters.map(value => <option value={value} key={value}>{value}</option>)}
-    </select>
+const Filter = ({ handleFilterChange, filters }) => (
+  <select onChange={handleFilterChange} className="text-white bg-dark">
+    {filters.map(value => <option value={value} key={value}>{value}</option>)}
+  </select>
 );
 
 Filter.propTypes = {
-    handleFilterChange: PropTypes.func.isRequired,
-    filters: PropTypes.array.isRequired
-}
+  handleFilterChange: PropTypes.func.isRequired,
+  filters: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const mapStateToProps = state => ({
-    filters: state.filters
+  filters: state.filters,
 });
-
 
 export default connect(mapStateToProps)(Filter);

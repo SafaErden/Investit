@@ -2,47 +2,39 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Stock from '../components/Stock';
-import Header from '../containers/Header';
+import Header from './Header';
 
+const NewsList = ({ stocks, filter }) => {
+  let stockList;
+  if (filter === 'ALL') {
+    stockList = stocks.map(stock => <Stock stock={stock} key={Math.random()} />);
+  } else {
+    stockList = stocks
+      .filter(stock => stock.source.name === filter)
+      .map(stock => (
+        <Stock stock={stock} key={Math.random()} />
+      ));
+  }
 
-class NewsList extends React.Component {
+  return (
+    <div>
+      <Header />
+      <div className="row">
+        {stockList}
+      </div>
 
-    render() {
-        const { stocks, filter } = this.props;
-        
-        let stockList;
-        if (filter === 'ALL') {
-            stockList = stocks.map(stock =>{  
-                if(stock.author!=null){
-            return <Stock stock={stock} key={Math.random()}/>
-            }});
-        } else {
-            stockList = stocks
-            .filter(stock => stock.source.name === filter)
-            .map(stock => (
-                <Stock  stock={stock} key={Math.random()} />
-            ));
-        }
-        
-        return (
-            <div>
-            <Header />
-                <div className="row">
-                    {stockList}
-                </div>
+    </div>
+  );
+};
 
-            </div>
-        );
-    }
-}
-
-NewsList.protoTypes = {
-    filter: PropTypes.string.isRequired
-}
+NewsList.propTypes = {
+  filter: PropTypes.string.isRequired,
+  stocks: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 const mapStateToProps = state => ({
-    stocks: state.stocks,
-    filter: state.filter
+  stocks: state.stocks,
+  filter: state.filter,
 });
 
 export default connect(mapStateToProps)(NewsList);
