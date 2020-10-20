@@ -1,17 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import stocks from '../constants/stocks'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 
-const Filter = ({handleFilterChange}) => (
+const Filter = ({handleFilterChange,filters}) => (
     <select onChange={handleFilterChange}>
-        <option value="ALL" key='all'>ALL</option>
-        {stocks.map(value => <option value={value} key={value}>{value}</option>)}
+        {filters.map(value => <option value={value} key={value}>{value}</option>)}
     </select>
 );
 
 Filter.propTypes = {
-    handleFilterChange: PropTypes.func.isRequired
+    handleFilterChange: PropTypes.func.isRequired,
+    filters: PropTypes.array.isRequired
 }
 
-export default Filter;
+const mapStateToProps = state => ({
+    filters: state.filters
+});
+
+
+export default connect(mapStateToProps)(Filter);

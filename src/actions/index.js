@@ -1,12 +1,17 @@
 
 import stocksApi from '../api/';
- const apiKey = "0378d78815afdaa0803653fff5dc0d77"
- 
+const newsApi = "d5ee384ec49743598a3fe5d0a7d7ffe3"
 export const setStocks = () => async dispatch => {
-  const response = await stocksApi.get(`stock_news?limit=50&apikey=${apiKey}`);
-  dispatch({ type: 'SET_STOCKS', stocks: response.data});
+  const response = await stocksApi.get(`/everything?q=stocks&from=2020-09-20&sortBy=publishedAt&apiKey=${newsApi}`);
+  dispatch({ type: 'SET_STOCKS', stocks: response.data['articles']});
+  
+  let sources = response.data['articles'].map(stock => stock.source.name);;
+      
+  let unique = [...new Set(sources)];
+  dispatch({ type: 'SET_FILTERS', filters: unique});
 };
-export const stocksFilter = stock => ({
+export const stocksFilter = source => ({
   type: 'CHANGE_FILTER',
-  stock
+  source
 })
+

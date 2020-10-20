@@ -6,28 +6,31 @@ import Stock from '../components/Stock'
 
 
 class NewsList extends React.Component {
-    componentDidMount () {
-        const { setStocks } = this.props;
+
+     componentDidMount () {
+        const { setStocks} = this.props;
         setStocks();
-      }
+    }
+
     render() {
         const { stocks, filter } = this.props;
-        if(stocks){console.log(stocks.length);}
+        
         let stockList;
         if (filter === 'ALL') {
-            stockList = stocks.map(stock => (
-            <Stock stock={stock} key={Math.random()}/>
-            ));
+            stockList = stocks.map(stock =>{  
+                if(stock.author!=null){
+            return <Stock stock={stock} key={Math.random()}/>
+            }});
         } else {
             stockList = stocks
-            .filter(stock => stock.symbol === filter)
+            .filter(stock => stock.source.name === filter)
             .map(stock => (
-                <Stock  Stock={Stock} key={Math.random()} />
+                <Stock  stock={stock} key={Math.random()} />
             ));
         }
         
         return (
-            <div>
+            <div className="row">
                {stockList}
             </div>
         );
