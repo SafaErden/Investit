@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Carousels from '../containers/Carousels';
+import NavBar from '../containers/NavBar';
 import Footer from '../containers/Footer';
 import NewsList from '../containers/NewsList';
 import NewsDetail from '../containers/NewsDetail';
@@ -16,14 +17,17 @@ class App extends React.Component {
  }
   render(){
     return (
-      <div className="container">
-       <Carousels />
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={NewsList}/>
-            <Route path="/detail/:id"  component={NewsDetail}/>
-          </Switch>
-        </BrowserRouter>
+      <div>
+       <NavBar />
+       <div className="container">
+          <Carousels />
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact component={NewsList}/>
+              <Route path="/detail/:id"  component={NewsDetail}/>
+            </Switch>
+          </BrowserRouter>
+       </div>
         <Footer />
       </div>
     );

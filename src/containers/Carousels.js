@@ -9,8 +9,8 @@ class BootstrapCarousel extends Component {
   render() {  
     const { stocks } = this.props;
     let stockList = stocks.map(stock => ( 
-      <Carousel.Item style={{'height':"300px"}} >  
-        <img style={{'height':"300px"}}  
+      <Carousel.Item style={{'height':"400px"}} >  
+        <img style={{'height':"400px"}}  
           className="d-block w-100"  
           src={stock.urlToImage}  />  
           <Carousel.Caption>  

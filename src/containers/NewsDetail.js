@@ -6,13 +6,25 @@ import {Link} from 'react-router-dom';
 
 
 const NewsDetail = ({stock}) => {
-    const { id, author, title, source, urlToImage } = stock[0];
+    const { url, author, title, source, description, urlToImage } = stock[0];
     
     return (
-        <div className="border col-12 col-md-6 col-xl-4">
-              <div>Author: {author}</div>
-          <Link to={"/"}>BACK</Link>
-          <div>image: <img className="w-100" src={urlToImage} alt={title}/></div>
+        <div className="border w-100 d-flex justify-content-center mt-3 flex-column rounded shadow-lg">
+            <img className="w-100" src={urlToImage} alt={title} />
+            <div class="card text-center">
+                <div class="card-header">
+                    {source.name}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{title}</h5>
+                    <p class="card-text">{description}</p>
+                    <Link to={"/"} className="btn btn-primary">Go Back</Link>
+                    <a href={url} class="btn btn-primary ml-2" target="_blank">Visit Source</a>
+                </div>
+                <div class="card-footer text-muted">
+                    By: {author}
+                </div>
+            </div>
       </div>
     );
 

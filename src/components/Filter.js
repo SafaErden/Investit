@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const Filter = ({handleFilterChange,filters}) => (
-    <select onChange={handleFilterChange}>
+    <select onChange={handleFilterChange} className="text-white bg-dark">
         {filters.map(value => <option value={value} key={value}>{value}</option>)}
     </select>
 );

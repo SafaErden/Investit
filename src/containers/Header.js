@@ -15,14 +15,9 @@ class Header extends React.Component {
       }
     render() {
         return (
-            <div className="row  bg-primary">
-                <div className="col-3 d-flex align-items-center">Stock News</div>
-                <div className="col-9 d-flex justify-content-end">
-                    <ul className="list-group list-group-horizontal">
-                        <li className="list-group-item"><Filter handleFilterChange={this.handleFilterChange}/></li>
-                        <li className="list-group-item">Sign In</li>
-                        <li className="list-group-item">Sign Up</li>
-                    </ul>
+            <div className="row my-3 p-0">
+                <div className="col-12 d-flex justify-content-end">
+                    <Filter handleFilterChange={this.handleFilterChange}/>
                 </div>
             </div>
         );
