@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Stock = ({stock}) => {
-  const { id, author, title, source, urlToImage } = stock;
+  const { id, title, source, urlToImage } = stock;
   return(
-      <div className="col-12 col-md-6 col-xl-4 my-2 shadow-lg">
+      <div className="col-12 col-md-6 col-xl-4 my-2">
           <div className="card" style={{}}>
             <img className="card-img-top" src={urlToImage} alt={title}/>
             <div className="card-body">

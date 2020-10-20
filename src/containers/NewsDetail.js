@@ -9,7 +9,7 @@ const NewsDetail = ({stock}) => {
     const { url, author, title, source, description, urlToImage } = stock[0];
     
     return (
-        <div className="border w-100 d-flex justify-content-center mt-3 flex-column rounded shadow-lg">
+        <div className="border w-100 d-flex justify-content-center my-4 flex-column rounded shadow-lg">
             <img className="w-100" src={urlToImage} alt={title} />
             <div class="card text-center">
                 <div class="card-header">

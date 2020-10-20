@@ -16,7 +16,7 @@ class Header extends React.Component {
     render() {
         return (
             <div className="row my-3 p-0">
-                <div className="col-12 d-flex justify-content-end">
+                <div className="col-12 d-flex justify-content-end">,<span className="text-white">Filter By Source:  </span>
                     <Filter handleFilterChange={this.handleFilterChange}/>
                 </div>
             </div>

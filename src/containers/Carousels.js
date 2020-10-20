@@ -33,5 +33,9 @@ class BootstrapCarousel extends Component {
 const mapStateToProps = state => ({
   stocks: state.stocks, 
 });
+
+BootstrapCarousel.propTypes = {
+  stocks: PropTypes.arrayOf(PropTypes.object).isRequired
+}
   
 export default connect(mapStateToProps)(BootstrapCarousel);
