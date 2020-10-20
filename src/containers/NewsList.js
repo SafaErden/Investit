@@ -30,9 +30,9 @@ class NewsList extends React.Component {
         }
         
         return (
-            <div className="row">
-               {stockList}
-            </div>
+                <div className="row">
+                {stockList}
+                </div>
         );
     }
 }
