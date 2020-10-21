@@ -5,7 +5,7 @@ describe('actions', () => {
     const filterType = 'Yahoo';
     const expectedAction = {
       type: 'CHANGE_FILTER',
-      source,
+      source: filterType
     };
     expect(stocksFilter(filterType)).toEqual(expectedAction);
   });

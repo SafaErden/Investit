@@ -10,7 +10,7 @@ describe('this reducer', () => {
     expect(
         filter([], {
         type: 'CHANGE_FILTER',
-        filterType,
+        source: filterType,
       }),
     ).toEqual('Yahoo Finance');
   });
