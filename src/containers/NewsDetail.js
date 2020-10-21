@@ -10,7 +10,7 @@ const NewsDetail = ({ stock }) => {
 
   return (
     <div className="border w-100 d-flex justify-content-center my-4 flex-column rounded shadow-lg">
-      <img className="w-100" src={urlToImage} alt={title} />
+      <img className="w-100 w-md-50 w-lg-25" src={urlToImage} alt={title} />
       <div className="card text-center">
         <div className="card-header">
           {source.name}
