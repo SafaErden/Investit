@@ -1,8 +1,8 @@
 import stocksApi from '../api';
 
-const newsApi = 'd5ee384ec49743598a3fe5d0a7d7ffe3';
+const newsApi = '258bdd87faa24b3794b400f85b9eb600';
 export const setStocks = () => async dispatch => {
-  const response = await stocksApi.get(`/everything?q=stocks&from=2020-09-20&sortBy=publishedAt&apiKey=${newsApi}`);
+  const response = await stocksApi.get(`/everything?q=stocks&from=2020-10-01&sortBy=publishedAt&apiKey=${newsApi}`);
   response.data.articles.map((article, id) => article.id = id); // eslint-disable-line
   dispatch({ type: 'SET_STOCKS', stocks: response.data.articles });
 
