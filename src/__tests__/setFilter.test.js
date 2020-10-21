@@ -8,7 +8,7 @@ describe('this reducer', () => {
   it('should handle CHANGE_FILTER', () => {
     const filterType = 'Yahoo Finance';
     expect(
-        filter([], {
+      filter([], {
         type: 'CHANGE_FILTER',
         source: filterType,
       }),
