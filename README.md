@@ -4,8 +4,8 @@
 
 ## Screen Captures
  <div style="display:flex; justify-content: space-around">
-  <img width="40%"  src="./src/assets/img/screencapture.png">
-  <img width="40%" height="40%"  src="./src/assets/img/detailcapture.png">
+  <img width="49%"  src="./src/assets/img/screencapture.png">
+  <img width="49%" height="40%"  src="./src/assets/img/detailcapture.png">
  </div>
 
 This application fetches data from Stock news API. Investit is a single page application built with React and Redux. I use Axios to get news data and I store them in the redux store. The retrieved data can be filtered using a Filter stateless component.
@@ -22,7 +22,7 @@ This application fetches data from Stock news API. Investit is a single page app
 
 ## Live Demo
 
-[Live Demo Link](https://icytowerreplica.netlify.app/)
+[Live Demo Link](https://peaceful-goldstine-a436b8.netlify.app/)
 
 ## Setup
 
