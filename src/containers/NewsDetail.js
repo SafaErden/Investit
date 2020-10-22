@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NewsDetail = ({ stock }) => {
   const {
-    symbol, title, image, url, text, site
+    symbol, title, image, url, text, site,
   } = stock[0];
 
   return (
