@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { stocksFilter } from '../actions';
-import Filter from '../components/Filter';
+import Filter from './Filter';
 
 class Header extends React.Component {
   constructor(props) {

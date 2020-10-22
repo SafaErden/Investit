@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Carousels from '../containers/Carousels';
-import NavBar from '../containers/NavBar';
-import Footer from '../containers/Footer';
-import NewsList from '../containers/NewsList';
-import NewsDetail from '../containers/NewsDetail';
-import { setStocks } from '../actions';
+import Carousels from './containers/Carousels';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import NewsList from './containers/NewsList';
+import NewsDetail from './containers/NewsDetail';
+import { setStocks } from './actions';
 
 class App extends React.Component {
   componentDidMount() {
