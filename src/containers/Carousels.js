@@ -29,7 +29,7 @@ const BootstrapCarousel = ({ stocks }) => {
 };
 
 const mapStateToProps = state => ({
-  stocks: state.stocks,
+  stocks: state.stocks.news,
 });
 
 BootstrapCarousel.propTypes = {

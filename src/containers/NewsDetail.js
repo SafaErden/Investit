@@ -33,7 +33,7 @@ const NewsDetail = ({ stock }) => {
 const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps.match.params;
   return {
-    stock: state.stocks.filter(stock => stock.id == id), // eslint-disable-line
+    stock: state.stocks.news.filter(stock => stock.id == id), // eslint-disable-line
   };
 };
 NewsDetail.propTypes = {
