@@ -10,7 +10,7 @@ const NewsList = ({ stocks, filter }) => {
     stockList = stocks.map(stock => <Stock stock={stock} key={Math.random()} />);
   } else {
     stockList = stocks
-      .filter(stock => stock.source.name === filter)
+      .filter(stock => stock.symbol === filter)
       .map(stock => (
         <Stock stock={stock} key={Math.random()} />
       ));
