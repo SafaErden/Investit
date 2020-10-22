@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const BootstrapCarousel = ({ stocks }) => {
   const stockList = stocks.map(stock => (
-    <Carousel.Item style={{ height: '400px' }} key={stock.title}>
+    <Carousel.Item style={{ height: '400px' }} key={Math.random()}>
       <img
         style={{ height: '400px' }}
         className="d-block w-100"

@@ -8,7 +8,7 @@ const Stock = ({ stock }) => {
   } = stock;
   return (
     <div className="col-12 col-md-6 col-xl-4 my-2">
-      <div className="card" style={{}}>
+      <div className="card">
         <img className="card-img-top" src={urlToImage} alt={title} />
         <div className="card-body">
           <h5 className="card-title">{source.name}</h5>
