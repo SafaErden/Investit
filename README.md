@@ -24,12 +24,6 @@ This application fetches data from financialmodelingprep news API. Investit is a
 
 [Live Demo Link](https://happy-swirles-471fcd.netlify.app/)
 
-##Presentaion: 
-
-[First Presentation](https://www.loom.com/share/0ec6420af467449a9112ffbb5cb69e0d)
-
-[Second Presentation](https://www.loom.com/share/550ec2a37f3240ad81f073f77053a403)
-
 ## Setup
 
 -To use this app locally, 
