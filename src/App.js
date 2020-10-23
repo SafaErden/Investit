@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Carousels from './containers/Carousels';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import NewsList from './containers/NewsList';
+import NewsDetail from './containers/NewsDetail';
+import { setStocks } from './actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    const { setStocks } = this.props;
+    setStocks();
+  }
+
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <div className="container">
+          <Carousels />
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact component={NewsList} />
+              <Route path="/detail/:id" component={NewsDetail} />
+            </Switch>
+          </BrowserRouter>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default App;
+App.propTypes = {
+  setStocks: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = { setStocks };
+
+export default connect(null, mapDispatchToProps)(App);
